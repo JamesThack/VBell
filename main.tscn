@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://ds7wwl1qybauj"]
+
+[ext_resource type="PackedScene" uid="uid://c4tge4aim1n5i" path="res://Entities/player.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://m5omyecxlugo" path="res://Entities/rope.tscn" id="3_rope"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0xm2m"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_h2yge"]
+sky_material = SubResource("ProceduralSkyMaterial_0xm2m")
+
+[sub_resource type="Environment" id="Environment_1bvp3"]
+background_mode = 2
+sky = SubResource("Sky_h2yge")
+
+[sub_resource type="BoxMesh" id="BoxMesh_w8u1w"]
+size = Vector3(28.13678, 0.3, 34.499695)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_h2yge"]
+points = PackedVector3Array(5.0793343, 0.24682543, 5.077377, -5.079365, -0.22936508, -5.077377, -5.079365, -0.22936508, 5.077377, -5.079365, 0.24682543, -5.077377, 5.0793343, -0.22936508, -5.077377, -5.079365, 0.24682543, 5.077377, 5.0793343, -0.22936508, 5.077377, 5.0793343, 0.24682543, -5.077377)
+
+[node name="Main" type="Node3D" unique_id=665952843]
+
+[node name="Player" parent="." unique_id=1281372170 instance=ExtResource("1_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009711899, 0.09768969, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1964644030]
+environment = SubResource("Environment_1bvp3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1735899921]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="StartXR" parent="." unique_id=1323765626 instance=ExtResource("1_ig7tw")]
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=2092806361]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.27848464, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=2048602875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3992512, -0.008692443, 5.860524)
+mesh = SubResource("BoxMesh_w8u1w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=736894869]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0669629, 0)
+shape = SubResource("ConvexPolygonShape3D_h2yge")
+
+[node name="Rope" parent="." unique_id=1413098659 instance=ExtResource("3_rope")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.42416155, -0.99838877)
