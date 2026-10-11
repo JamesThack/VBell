@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bfrlpbsqg5lqr" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_pickable"]
 [ext_resource type="Script" uid="uid://bp7twpx0j2oa1" path="res://Entities/rope_surface.gd" id="2_surface"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="3_36v54"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_36v54"]
 albedo_color = Color(0.43, 0.29, 0.16, 1)
@@ -282,6 +283,15 @@ surface_material_override/0 = SubResource("Material_grip_blue")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RopeGripBlue" unique_id=718071345]
 shape = SubResource("CapsuleShape_rope")
 
+[node name="GrabPointHandRight" parent="RopeGripBlue" unique_id=1244092907 instance=ExtResource("3_36v54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015826643, 0.042904258, -0.095395)
+snap_hand = false
+
+[node name="GrabPointHandLeft" parent="RopeGripBlue" unique_id=1956387645 instance=ExtResource("3_36v54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015255172, 0.042904258, -0.095395)
+hand = 0
+snap_hand = false
+
 [node name="RopeJoint10" type="PinJoint3D" parent="." unique_id=94854790]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 node_a = NodePath("../RopeLink09")
@@ -336,6 +346,15 @@ surface_material_override/0 = SubResource("Material_grip_white")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RopeBottomGripWhite" unique_id=1144248148]
 shape = SubResource("CapsuleShape_rope")
+
+[node name="GrabPointHandRight" parent="RopeBottomGripWhite" unique_id=987737867 instance=ExtResource("3_36v54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015826643, 0.042904258, -0.095395)
+snap_hand = false
+
+[node name="GrabPointHandLeft" parent="RopeBottomGripWhite" unique_id=370072767 instance=ExtResource("3_36v54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015255172, 0.042904258, -0.095395)
+hand = 0
+snap_hand = false
 
 [node name="RopeJoint13" type="PinJoint3D" parent="." unique_id=1688196617]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.77, 0)
