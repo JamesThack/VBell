@@ -16,6 +16,8 @@ The current project is an early foundation: `main.tscn` is the entry scene and `
 ## Technical conventions
 
 - Use Godot 4 scene-based composition. Keep gameplay entities and reusable interactions in their own scenes/scripts rather than growing `main.tscn` into a monolith.
+- Prefer proper, off-the-shelf solutions: check Godot's built-in features and the installed XR Tools addon before designing custom logic. If custom logic appears necessary, raise the need and proposed approach with the project developer first so they can check for a standard solution; wait for that review before implementing it.
+- Make scene structure visible and editable in the Godot editor. Author nodes, physics bodies, joints, grab points, and their relationships in `.tscn` scenes instead of constructing the structure invisibly at runtime in code. Use scripts for behavior that genuinely needs code, and preserve an editor preview for generated visuals where practical.
 - The project uses OpenXR, Godot XR Tools, Jolt Physics, and the GL Compatibility renderer. Preserve compatibility with the Android export target and current XR configuration when adding features.
 - Keep project-authored code and assets distinct from vendored content under `addons/`. Do not modify addon files to implement project-specific behavior when a project-owned wrapper or scene can do it.
 - Prefer clear node names and small scripts with explicit responsibilities. Keep tunable gameplay values exported or in appropriate resources instead of burying them in unrelated logic.
