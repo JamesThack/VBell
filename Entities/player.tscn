@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://b8hc2ex21u8xj" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_physics_fullglove_low.tscn" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="2_hqtel"]
-[ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="2_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://bkdeegb8w3oah" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_physics_fullglove_low.tscn" id="2_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="3_2hs0m"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_dw050"]
-[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="4_s1j76"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="5_sweqy"]
+[ext_resource type="PackedScene" uid="uid://clt88d5d1dje4" path="res://addons/godot-xr-tools/functions/movement_crouch.tscn" id="6_s1j76"]
 
 [node name="Player" type="XROrigin3D" unique_id=1281372170]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009711899, 0, 0)
@@ -22,10 +22,7 @@ tracker = &"left_hand"
 
 [node name="FunctionPickup" parent="LeftHandController/LeftPhysicsHand" unique_id=981523750 instance=ExtResource("2_hqtel")]
 
-[node name="MovementDirect" parent="LeftHandController/LeftPhysicsHand" unique_id=2074699396 instance=ExtResource("3_dw050")]
-
-[node name="FunctionTeleport" parent="LeftHandController/LeftPhysicsHand" unique_id=118863543 instance=ExtResource("4_s1j76")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+[node name="MovementDirect" parent="LeftHandController/LeftPhysicsHand" unique_id=1828963076 instance=ExtResource("3_dw050")]
 
 [node name="RightHandController" type="XRController3D" parent="." unique_id=1550802077]
 tracker = &"right_hand"
@@ -39,5 +36,8 @@ turn_mode = 2
 
 [node name="FunctionPickup" parent="RightHandController/RightHand" unique_id=1259776698 instance=ExtResource("2_hqtel")]
 
+[node name="MovementCrouch" parent="RightHandController/RightHand" unique_id=2108573220 instance=ExtResource("6_s1j76")]
+crouch_height = 0.3
+
 [node name="PlayerBody" parent="." unique_id=327761521 instance=ExtResource("5_sweqy")]
-motion_mode = 1
+collision_mask = 1019

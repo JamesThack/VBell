@@ -86,12 +86,10 @@ mesh = SubResource("ArrayMesh_u0l73")
 script = ExtResource("2_surface")
 grip_clearance = 0.58
 
-[node name="CeilingAnchor" type="StaticBody3D" parent="." unique_id=1588514926]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.85, 0)
-
 [node name="RopeLink00" type="RigidBody3D" parent="." unique_id=335992400]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.77, 0)
 collision_layer = 4
+collision_mask = 131077
 mass = 0.06
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RopeLink00" unique_id=651814262]
@@ -102,14 +100,10 @@ surface_material_override/0 = SubResource("Material_rope")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RopeLink00" unique_id=1441925607]
 shape = SubResource("CapsuleShape_rope")
 
-[node name="RopeJoint00" type="PinJoint3D" parent="." unique_id=2051301836]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.85, 0)
-node_a = NodePath("../CeilingAnchor")
-node_b = NodePath("../RopeLink00")
-
 [node name="RopeLink01" type="RigidBody3D" parent="." unique_id=1454840947]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.61, 0)
 collision_layer = 4
+collision_mask = 131077
 mass = 0.06
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RopeLink01" unique_id=1098336336]
@@ -128,6 +122,7 @@ node_b = NodePath("../RopeLink01")
 [node name="RopeLink02" type="RigidBody3D" parent="." unique_id=1693638606]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.45, 0)
 collision_layer = 4
+collision_mask = 131077
 mass = 0.06
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RopeLink02" unique_id=93657109]
@@ -146,6 +141,7 @@ node_b = NodePath("../RopeLink02")
 [node name="RopeLink03" type="RigidBody3D" parent="." unique_id=110855677]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.29, 0)
 collision_layer = 4
+collision_mask = 131077
 mass = 0.06
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RopeLink03" unique_id=1625347436]
@@ -164,6 +160,7 @@ node_b = NodePath("../RopeLink03")
 [node name="RopeLink04" type="RigidBody3D" parent="." unique_id=1441420233]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.13, 0)
 collision_layer = 4
+collision_mask = 131077
 mass = 0.06
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RopeLink04" unique_id=348529750]
@@ -182,6 +179,7 @@ node_b = NodePath("../RopeLink04")
 [node name="RopeLink05" type="RigidBody3D" parent="." unique_id=1508240925]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97, 0)
 collision_layer = 4
+collision_mask = 131077
 mass = 0.06
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RopeLink05" unique_id=1353791109]
@@ -200,6 +198,7 @@ node_b = NodePath("../RopeLink05")
 [node name="RopeLink06" type="RigidBody3D" parent="." unique_id=1290493063]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.81, 0)
 collision_layer = 4
+collision_mask = 131077
 mass = 0.06
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RopeLink06" unique_id=1583101634]
@@ -218,6 +217,7 @@ node_b = NodePath("../RopeLink06")
 [node name="RopeLink07" type="RigidBody3D" parent="." unique_id=1081537126]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65, 0)
 collision_layer = 4
+collision_mask = 131077
 mass = 0.06
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RopeLink07" unique_id=461983835]
@@ -236,6 +236,7 @@ node_b = NodePath("../RopeLink07")
 [node name="RopeLink08" type="RigidBody3D" parent="." unique_id=1699858669]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49, 0)
 collision_layer = 4
+collision_mask = 131077
 mass = 0.06
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RopeLink08" unique_id=393222518]
@@ -254,6 +255,7 @@ node_b = NodePath("../RopeLink08")
 [node name="RopeLink09" type="RigidBody3D" parent="." unique_id=1324415389]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.33, 0)
 collision_layer = 4
+collision_mask = 131077
 mass = 0.06
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RopeLink09" unique_id=610381323]
@@ -272,6 +274,7 @@ node_b = NodePath("../RopeLink09")
 [node name="RopeGripBlue" type="RigidBody3D" parent="." unique_id=967654451]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17, 0)
 collision_layer = 4
+collision_mask = 131077
 mass = 0.12
 script = ExtResource("1_pickable")
 
@@ -300,6 +303,7 @@ node_b = NodePath("../RopeGripBlue")
 [node name="RopeLink11" type="RigidBody3D" parent="." unique_id=1508555800]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01, 0)
 collision_layer = 4
+collision_mask = 131077
 mass = 0.06
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RopeLink11" unique_id=314462167]
@@ -318,6 +322,7 @@ node_b = NodePath("../RopeLink11")
 [node name="RopeLink12" type="RigidBody3D" parent="." unique_id=1893666395]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
 collision_layer = 4
+collision_mask = 131077
 mass = 0.06
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RopeLink12" unique_id=1734097487]
@@ -336,6 +341,7 @@ node_b = NodePath("../RopeLink12")
 [node name="RopeBottomGripWhite" type="RigidBody3D" parent="." unique_id=610111763]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69, 0)
 collision_layer = 4
+collision_mask = 131077
 mass = 0.06
 script = ExtResource("1_pickable")
 

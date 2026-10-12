@@ -24,7 +24,7 @@ points = PackedVector3Array(5.0793343, 0.24682543, 5.077377, -5.079365, -0.22936
 [node name="Main" type="Node3D" unique_id=665952843]
 
 [node name="Player" parent="." unique_id=1281372170 instance=ExtResource("1_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009711899, 0.09768969, 0)
+transform = Transform3D(0.9943336, 0, 0.106304266, 0, 1, 0, -0.106304266, 0, 0.9943336, -0.009711899, 0.09768969, 0.7610064)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1964644030]
 environment = SubResource("Environment_1bvp3")
@@ -46,5 +46,5 @@ mesh = SubResource("BoxMesh_w8u1w")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0669629, 0)
 shape = SubResource("ConvexPolygonShape3D_h2yge")
 
-[node name="Rope" parent="." unique_id=1413098659 instance=ExtResource("3_rope")]
+[node name="a" parent="." unique_id=1413098659 instance=ExtResource("3_rope")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.42416155, -0.99838877)
